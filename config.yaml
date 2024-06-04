@@ -15,18 +15,18 @@ settings:
   dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
 
 monitors:
-  - id: cb-public-site # unique identifier
-    name: Citybook Public Site
-    description: 'The main Citybook website - https://citybook.co.il.' # default=empty
-    url: 'https://citybook.co.il/' # URL to fetch
+  - id: cb-main-fg # unique identifier
+    name: Citybook Internet MI (https://fg.mi.citybook.co.il)
+    description: 'The main Citybook FortiGate in MI' # default=empty
+    url: 'https://fg.mi.citybook.co.il/' # URL to fetch
     method: GET # default=GET
-    expectStatus: 200 # operational status, default=200
+    expectStatus: 500 # operational status, default=200
     followRedirect: false # should fetch follow redirects, default=false
-    linkable: false # allows the title to be a link, default=true
+    linkable: true # allows the title to be a link, default=true
 
   - id: cb-help-site
     name: Citybook Help Site
-    description: 'Built for anything connected to the Internet.'
+    description: 'The Citybook Help website.'
     url: 'https://help.citybook.co.il/'
     method: GET
     expectStatus: 200
